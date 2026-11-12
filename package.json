@@ -1,0 +1,36 @@
+{
+  "name": "yerevan-traffic-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for live, traffic-aware routing in Yerevan: ETA, alternatives and per-segment congestion (Google Routes API + TomTom).",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "yerevan-traffic-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "coverage-check": "tsx scripts/coverage-check.ts"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
