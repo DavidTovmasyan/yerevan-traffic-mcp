@@ -14,7 +14,13 @@ It wraps two licensed traffic APIs:
 
 Set either key, or both. Nothing here scrapes Yandex.
 
-> **Coverage is not yet verified.** Neither Google nor TomTom documents live traffic coverage for
+> **TomTom has no live traffic for Yerevan** (tested 2026-11-12, Thursday 16:52 local): Traffic Flow
+> returns "Point too far from nearest existing segment" everywhere in the city including Republic
+> Square, Incidents returns 0 for the whole city, and routes come back with `trafficDelayInSeconds: 0`.
+> TomTom routing itself works (streets, turn-by-turn, alternatives), and its geocoder does not find most
+> Yerevan addresses, so pass coordinates. Google is the remaining candidate for live traffic.
+>
+> **Google coverage is not yet verified.** Neither Google nor TomTom documents live traffic coverage for
 > Armenia. Before relying on a provider, run `npm run coverage-check` at rush hour and compare with
 > Yandex Navigator (see [Verifying coverage](#verifying-coverage)).
 
